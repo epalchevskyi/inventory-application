@@ -35,7 +35,7 @@ public class ProductsServiceImpl implements ProductsService {
             Map<String, Boolean> result = new HashMap<>();
             Random random = new Random();
 
-            List<Product> filteredList =  PRODUCTS_LIST.stream().filter(product -> uniqIds.contains(product.getUniqId())).collect(Collectors.toList());
+            List<Product> filteredList = PRODUCTS_LIST.stream().filter(product -> uniqIds.contains(product.getUniqId())).collect(Collectors.toList());
             filteredList.forEach(product -> result.put(product.getUniqId(), random.nextBoolean()));
 
             return result;
